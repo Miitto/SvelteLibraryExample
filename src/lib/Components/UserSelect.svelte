@@ -30,9 +30,9 @@
 		<input type="text" placeholder="Search for a user..." bind:value={userSearch} />
 	</form>
 	{#each filtered as user (user.id)}
-		<div class="user">
-			<h3>{user.name}</h3>
-		</div>
+		<button on:click|preventDefault={() => (value = user.id) && (show = false)}>
+			<h3>{user.email}</h3>
+		</button>
 	{:else}
 		<p>No Users Found</p>
 	{/each}
@@ -48,3 +48,11 @@
 	}}
 />
 <input type="text" name="user" hidden bind:value />
+
+<style lang="scss">
+	button {
+		background-color: #5555;
+		backdrop-filter: blur(10px);
+		text-align: left;
+	}
+</style>

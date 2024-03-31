@@ -26,17 +26,13 @@
 	<form>
 		<input type="text" placeholder="Search for a book..." bind:value={bookSearch} />
 	</form>
-	<ul class="books">
-		{#each filtered as book (book.id)}
-			<li class="book">
-				<h3>{book.title}</h3>
-				<p>{book.author.name}</p>
-				<button>Select</button>
-			</li>
-		{:else}
-			<p>No Books Found</p>
-		{/each}
-	</ul>
+	{#each filtered as book (book.id)}
+		<button on:click|preventDefault={() => (value = book.id) && (show = false)}>
+			<h3>{book.title}</h3>
+		</button>
+	{:else}
+		<p>No Books Found</p>
+	{/each}
 </Modal>
 <input
 	type="text"
@@ -51,8 +47,9 @@
 <input type="text" name="book" hidden bind:value />
 
 <style lang="scss">
-	.books {
-		display: flex;
-		flex-direction: column;
+	button {
+		background-color: #5555;
+		backdrop-filter: blur(10px);
+		text-align: left;
 	}
 </style>

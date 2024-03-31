@@ -11,11 +11,10 @@ datasource db {
 }
 
 model User {
-  id       String  @id @default(cuid())
-  email    String  @unique
-  name     String?
-  password String
-  Loan     Loan[]
+  id    String  @id @default(cuid())
+  email String  @unique
+  name  String?
+  Loan  Loan[]
 }
 
 model Book {
@@ -40,5 +39,5 @@ model Loan {
   userId   String
   user     User     @relation(fields: [userId], references: [id])
   dueDate  DateTime
-  returned Boolean
+  returned Boolean  @default(false)
 }

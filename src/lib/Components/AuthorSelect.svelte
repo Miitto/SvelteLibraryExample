@@ -28,7 +28,7 @@
 		<input type="text" placeholder="Search for a author..." bind:value={authorSearch} />
 	</form>
 	{#each filtered as author (author.id)}
-		<button class="author" on:click|preventDefault={() => (value = author.id) && (show = false)}>
+		<button on:click|preventDefault={() => (value = author.id) && (show = false)}>
 			<h3>{author.name}</h3>
 		</button>
 	{:else}
