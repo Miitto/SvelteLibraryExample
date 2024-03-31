@@ -1,0 +1,106 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	height: 100%;
+	width: 100%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+input,
+button,
+textarea {
+	padding: 0.5em 1em;
+	border: 1px solid #5555;
+	border-radius: 5px;
+	background: #222;
+	color: white;
+
+	&:focus {
+		outline: none;
+		border-color: #007bff;
+	}
+
+	&:hover {
+		filter: brightness(1.2);
+	}
+
+	&:active {
+		filter: brightness(0.8);
+	}
+}
+
+hr {
+	margin-block: 1em;
+}
+
+.new {
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+	width: 60px;
+	height: 60px;
+	background-color: #0c9;
+	color: #fff;
+	border-radius: 50%;
+	text-align: center;
+	font-size: 30px;
+	border: none;
+	padding: 0;
+
+	/* Gives the button a 3D effect */
+	box-shadow:
+		-1px -1px 1px #000 inset,
+		1px 1px 1px #fff inset;
+	/* Inverts the 3D effect when the button is clicked, to make it appear pushed */
+	&:active {
+		box-shadow:
+			1px 1px 1px #000 inset,
+			-1px -1px 1px #fff inset;
+	}
+}
+
+.notif {
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	width: fit-content;
+	padding: 0.5em;
+	background: #0005;
+	border-radius: 5px;
+	border: 1px solid #5555;
+	pointer-events: none;
+	animation-delay: 5s;
+	animation: fadeOut 1s 5s forwards;
+
+	&.success {
+		background: #0c93;
+	}
+
+	&.error {
+		background: #c003;
+	}
+}
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	/* Add your dark mode styles here */
+	body {
+		background-color: #333;
+		color: #fff;
+	}
+}
