@@ -14,7 +14,7 @@ model User {
   id    String  @id @default(cuid())
   email String  @unique
   name  String?
-  Loan  Loan[]
+  loans Loan[]
 }
 
 model Book {
@@ -23,7 +23,7 @@ model Book {
   description String?
   authorId    String
   author      Author  @relation(fields: [authorId], references: [id])
-  Loan        Loan[]
+  loans       Loan[]
 }
 
 model Author {
