@@ -17,8 +17,6 @@
 
 	let userSearch = '';
 
-	$: console.log(required);
-
 	$: user = users.find((user) => user.id === value);
 
 	$: show && (userSearch = '');
