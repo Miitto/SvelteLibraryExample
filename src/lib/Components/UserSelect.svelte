@@ -40,7 +40,7 @@
 	{required}
 	placeholder="Select a user..."
 	on:click|preventDefault={() => (show = true)}
-	value={user?.name ?? ''}
+	value={user?.email ?? ''}
 	on:keydown={(evt) => {
 		if (evt.key != 'Tab' && evt.key != 'Escape') show = true;
 	}}
